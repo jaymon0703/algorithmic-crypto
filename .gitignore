@@ -1,4 +1,4 @@
 .git/
 .idea/
 __pycache__/
-__Log__.txt
+__Log__.log
