@@ -10,7 +10,7 @@ class OrderBook:
                     self.bitcoin_security.security_id,
                     self.bids, self.asks)
 
-    def reset_book(self):
+    def reset_order_book(self):
         self.bids = {}
         self.asks = {}
 

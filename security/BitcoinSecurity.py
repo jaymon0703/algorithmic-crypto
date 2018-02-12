@@ -17,12 +17,16 @@ class BitcoinSecurity:
             .format(self.exchange_id, self.exchange_url, self.security_id, self.user_id, self.user_secret)
 
     def execute_order_book(self):
-        pass
+        self.order_book.reset_order_book()
+        return self.order_book
 
     def execute_order_decision(self):
-        pass
+        self.order_decision.reset_order_decision()
+        return self.order_decision
 
     def set_order_decision(self, order_type, order_volume, order_price):
+        self.order_decision.reset_order_decision()
         self.order_decision.set_order_type(order_type)
         self.order_decision.set_order_volume(order_volume)
         self.order_decision.set_order_price(order_price)
+        return self.order_decision

@@ -12,6 +12,15 @@ class OrderDecision:
             .format(self.bitcoin_security.exchange_id, self.bitcoin_security.security_id,
                     self.order_type, self.order_volume, self.order_price, self.order_id)
 
+    def reset_order_decision(self):
+        self.order_type = ''
+        self.order_volume = 0.0
+        self.order_price = 0.0
+        self.order_id = 0
+
+    def set_order_id(self, order_id):
+        self.order_id = order_id
+
     def set_order_type(self, order_type):
         self.order_type = order_type
 
@@ -20,6 +29,3 @@ class OrderDecision:
 
     def set_order_price(self, order_price):
         self.order_price = order_price
-
-    def set_order_id(self, order_id):
-        self.order_id = order_id
