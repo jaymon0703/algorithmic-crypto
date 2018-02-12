@@ -37,5 +37,9 @@ class BitcoinArbitrage:
                 file.write("{}->sell('{}@{}')\n"
                            .format(self.sell_security.exchange_id, switchable_volume, sell_security_bid_price))
                 file.write('--------------------------------------------------------------------\n')
-                self.buy_security.create_buy_order(switchable_volume, buy_security_ask_price)
-                self.sell_security.create_sell_order(switchable_volume, sell_security_bid_price)
+                self.buy_security.set_order_decision("BID", switchable_volume, buy_security_ask_price)
+                self.sell_security.set_order_decision("ASK", switchable_volume, sell_security_bid_price)
+
+    def execute_switch_order(self):
+        self.buy_security.execute_order_decision()
+        self.sell_security.execute_order_decision()
