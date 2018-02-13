@@ -1,3 +1,6 @@
+import json
+
+
 class OrderBook:
     def __init__(self, bitcoin_security):
         self.bitcoin_security = bitcoin_security
@@ -5,12 +8,9 @@ class OrderBook:
         self.asks = {}
 
     def __str__(self):
-        return "'exchange_id':'{}', 'security_id':'{}', 'bids':'{}', 'asks':'{}'" \
-            .format(self.bitcoin_security.exchange_id,
-                    self.bitcoin_security.security_id,
-                    self.bids, self.asks)
+        return json.dumps(self)
 
-    def reset_order_book(self):
+    def reset(self):
         self.bids = {}
         self.asks = {}
 

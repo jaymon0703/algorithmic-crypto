@@ -41,5 +41,6 @@ class BitcoinArbitrage:
                 self.sell_security.set_order_decision("ASK", switchable_volume, sell_security_bid_price)
 
     def execute_switch_order(self):
-        self.buy_security.execute_order_decision()
-        self.sell_security.execute_order_decision()
+        # self.buy_security.execute_order_decision()
+        # self.sell_security.execute_order_decision()
+        pass

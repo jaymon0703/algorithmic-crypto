@@ -6,8 +6,11 @@ from security.BitcoinSecurity import BitcoinSecurity
 
 
 class LunoSecurity(BitcoinSecurity):
+    def __init__(self, exchange_id, exchange_url, security_id, user_id, user_secret):
+        super().__init__(exchange_id, exchange_url, security_id, user_id, user_secret)
+
     def execute_order_book(self):
-        self.order_book.reset_order_book()
+        self.order_book.reset()
         http_get_url = '{}orderbook?pair={}' \
             .format(self.exchange_url, self.security_id)
         http_get_request = urllib.request.Request(http_get_url)
